@@ -1,0 +1,16 @@
+/* .profilePicture{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+.profilePicture img{  
+    height: 45px;
+    width:  45px;
+    border-radius: 50%;
+    margin-top: 5px;
+    /* object-fit: contain; */
+    /* background-position: center; */
+    /* background-size: contain; */
+    /* background-repeat: no-repeat; */
+}

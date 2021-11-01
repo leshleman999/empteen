@@ -1,0 +1,17 @@
+[
+    {
+        "email": "harry@gmail.com",
+        "envObjectId": "ObjectId('615ca61e9c37cc36b027e699')",
+        "envName": "Skin Care"
+    },
+    {
+        "email": "harry@gmail.com",
+        "envObjectId": "ObjectId('615debff5642362c0d15f86d')",
+        "envName": "My World Your World"
+    },
+    {
+        "email": "harry@gmail.com",
+        "envObjectId": "ObjectId('615dec9e4fddecc244781176')",
+        "envName": "My World Your World General"
+    }
+]

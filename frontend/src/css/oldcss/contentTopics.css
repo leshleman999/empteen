@@ -1,0 +1,148 @@
+.topicContainer {
+  padding-top: 16px;
+  width: 350px;
+  height: auto;
+}
+
+.contentTopics {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  border: 1px solid black;
+  border-radius: 20px;
+  box-shadow: -6px 6px 4px rgba(0, 0, 0, 0.25);
+  transition: 0.2s all;
+  overflow: hidden;
+}
+
+.contentTopics:hover {
+  transform: translateY(-10px);
+  box-shadow: -6px 10px 6px rgba(0, 0, 0, 0.25);
+  /* opacity: 1; */
+}
+
+/* LEFT SECTION */
+
+/* .contentImageBox {
+  margin: 0;
+  padding: 0;
+  width: auto;
+  height: 100%;
+  flex: 0;
+} */
+
+/* IMAGE */
+
+.topicImage {
+  width: auto;
+  height: 100%;
+}
+
+/* MIDDLE SECTION */
+
+.contentSide {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 12px 0px 12px;
+}
+
+/* TOPIC TOP SECTION */
+
+/* .contentTopicsMiddle {
+  display: flex;
+} */
+
+.topicInfo {
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: space-around;
+  padding: 4px;
+  /* align-self: center; */
+}
+
+.topicTitle {
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+}
+
+.topicPostDate {
+  align-self: center;
+  font-weight: 400;
+}
+
+/* TOPIC MIDDLE SECTION */
+
+/* .contentTopicsMiddle {
+  width: 95%;
+  height: 68px;
+  margin: 0 auto;
+  padding: 8px 0px;
+} */
+
+/* .topicContent {
+  border: 1px solid black;
+  text-align: center;
+  letter-spacing: 1.5px;
+  line-height: 1.75;
+  white-space: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0) 25%,
+    rgba(255, 255, 255, 0.185)
+  );
+} */
+
+/* TOPIC BOTTOM SECTION */
+
+.contentTopicsBottom {
+  display: flex;
+  justify-content: space-between;
+  margin: 8px 8px 0px 8px;
+}
+
+.rating {
+  display: flex;
+  flex-direction: column;
+}
+
+.starRating {
+  align-self: center;
+}
+
+.overallRating {
+  margin-left: 8px;
+  align-self: flex-end;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.topicComments {
+  /* display: flex; */
+  /* border: 1px solid black; */
+  border-radius: 15px;
+  height: fit-content;
+  padding: 5px 8px;
+  position: relative;
+}
+
+.commentIcon {
+  margin-top: 14px;
+  margin-right: 8px;
+  z-index: 3;
+  cursor: pointer;
+}
+
+.topicComments h4 {
+  margin-left: 10px;
+  padding: 3px 5px;
+  background-color: blanchedalmond;
+  border: 1px solid black;
+  border-radius: 25px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 4;
+}

@@ -1,0 +1,159 @@
+.profileSettings {
+  padding-bottom: 10px;
+  border-bottom: 1px solid black;
+}
+
+/* .profilePic {
+  border: 2px solid;
+  height: 60px;
+  width: 60px;
+  background-color: blue;
+  border-radius: 50%;
+} */
+
+/* .settingsContainer{
+    display: flex;
+} */
+
+.contain{
+    display: flex;
+}
+
+.settingsContainer input{
+    color: black;
+}
+
+.profileTitle, .passwordTitle, .socialTitle{
+    /* border:3px solid red; */
+    min-width: 15vw;
+    max-width: 15vw;
+}
+
+.settings input{
+    height: 5vh;
+    width: 60vw;    
+}
+
+.settings textarea{
+    height: 25vh;
+    width: 60vw;  
+    padding: 10px;  
+}
+
+span{
+    color: red;
+    font-size: larger;
+}
+
+.profileSettings, .passwordSettings, .socialSettings{
+    margin-top: 30px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid black;
+    display: flex;
+}
+
+.profile{
+    /* border: 2px solid pink; */
+    width: 10vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* .profilePic{
+    border: 2px solid;
+    height: 60px;
+    width:  60px;
+    border-radius: 50%;
+    display: flex;  
+} */
+
+.UploadImg, .RemoveImg{
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* button {
+  border: none;
+  background: none;
+  text-decoration: underline;
+} */
+
+.passwordSettings {
+  padding-bottom: 10px;
+  border-bottom: 1px solid black;
+}
+
+.btn {
+  margin-left: 300px;
+}
+
+
+.inputFirstRow{
+    /* border: 1px solid green; */
+    display: flex;
+}
+
+.displayName, .email, .location, .currentPassWord, .newPassWord, .comfirmPassWord, .pronouns, .aboutText{
+    /* border: 2px solid orange; */
+    width: 60vw;
+    display: flex;
+    flex-direction: column; 
+}
+
+.numberContainer{
+    /* border: 1px solid greenyellow; */
+    width: 60vw;
+    display: flex;
+}
+
+.confirmation{
+    /* border: 1px solid green; */
+    width: 21vw;
+    display: flex;
+    justify-content: space-around;
+}
+
+.time{
+    /* border: 1px solid green; */
+    width: 21vw;
+    display: flex;
+    justify-content: space-around;
+}
+
+.numberandBirth{
+    /* border: 1px solid orange; */
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+}
+
+.firstLastName, .lasttLastName, .parentName, .parentsEmail, .locationSpot, .confirmation, .phoneNumber, .dateOfBirth, .timeZone{
+    display: flex;
+    flex-direction: column;
+}
+
+.firstLastName input, .lasttLastName input, .parentName input, .parentsEmail input, .locationCityandState input, .locationCountry input{
+    width: 28vw;
+}
+
+.confirmation input, .phoneNumber input, .dateOfBirth input, .timeOut input{
+    width: 18vw;
+}
+
+.timeZone input{
+    width: 38vw;
+}
+
+.name, .parentsInfo, .locationCityandState, .timeoutandZone{
+    /* border: 2px solid orange; */
+    width: 60vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+.settingBtns{
+    display: flex;
+    justify-content: flex-end;
+}

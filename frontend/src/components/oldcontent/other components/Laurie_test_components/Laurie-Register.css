@@ -1,0 +1,113 @@
+.content{
+    /* background-image: url("https://www.empowerteen.org/wp-content/uploads/2018/03/bigstock-High-School-Students-Taking-Pa-66792271.jpg"); */
+    background-repeat: no-repeat;
+    background-position: top right;
+    width:100vw;
+    /* background-position: right; */
+  
+    /* background-size: cover; */
+    background-color:gray;
+    /* opacity: .45; */
+  
+  
+  }
+  
+  .content > .register > .bgPicture{
+    position: fixed;
+    top: 0; /* here is where you specify how low you want the image to start */
+    right: 0;
+    width: 65%;
+    height: 100%;
+  }
+  
+  #logo{
+    position: absolute;
+    margin: 20px;
+    width: 75;
+    height: 75;
+  }
+  .register{
+  
+    height: 100vh;
+    width: 100vw;
+    
+  }
+  .loginBox{
+    position: absolute;
+    background-color: white;
+    margin-left: 200px;
+    margin-top: 30px; 
+    min-width: 20%;
+    height:90%;
+    border: 1px solid gray;
+    padding: 20px 20px;
+    z-index: 1;
+    opacity: .75;
+    
+  }
+  
+  .content > .register > .loginBox > .name{
+    display:flex;
+    justify-content: space-between;
+    width: 100%
+  }
+  .loginBox > .name-first{
+    display:flex;
+    flex-direction:column;
+    width: calc(95%/2)
+  }
+  
+  .content > .register > .loginBox > .name > .name-first > #firstname{
+   width:95%;
+  }
+  .content > .register > .loginBox > .name-last{
+    display:flex;
+    flex-direction:column;
+  }
+
+  .content > .register > .loginBox > .underage{
+    width:100%;
+  
+  }
+
+  .content > .register > .loginBox > .underage > .toggle-section{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width:100%;
+    display:flex;
+    justify-content: space-between;
+  }
+  
+  .content > .register > .loginBox > .underage > .toggle-section > #togglebutton{
+    margin-top: 100px;
+  }
+  
+  .content > .register > .loginBox > hr{
+    margin-top:10px;
+    margin-bottom:10px;
+  }
+  
+  .content > .register > .loginBox >  #or{
+    width:100%;
+    text-align:center;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+  .content > .register > .loginBox > .fedAuth{
+    display:flex;
+    justify-content:space-around;
+  }
+  .content > .register > .loginBox > .fedAuth > .fedAuthIcon{
+    width: 30px;
+  }
+  
+  .profile_pic { 
+    border-style: 2px solid black;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    
+  
+  }

@@ -1,0 +1,19 @@
+{
+    "envName": "Skin Care For All Genders",
+    "envDescription": "Discover steps to Healthier Skin",
+    "envActive": true,
+    "envDisplay": true,
+    "envAnnouncements": [
+        {
+            "annTitle": "Pickup Your Proactive Kit in our next Meeting",
+            "annContent": "Don't forget, we have all received a free kig worth $100 of skin care products from the company Proactive!  Please come by and pick up your kit before Halloween.",
+            "annDate": "10/14/21"},
+        {
+            "annTitle": "Event: Get a Facial",
+            "annContent": "A special guest is coming to share with us some tips on how to give yourself a proper facial.", 
+            "annDate": "10/15/21"}
+    ],
+    "envImageURL": "",
+    "envCreateDate": "10/15/2021",
+    "envTeacher": "Jenny Smith"
+}

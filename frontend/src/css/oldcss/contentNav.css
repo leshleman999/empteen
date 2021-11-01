@@ -1,0 +1,61 @@
+.navTabs {
+  display: flex;
+  flex-direction: column;
+  background-color: #efefef;
+  justify-content: space-evenly;
+  width: 100%;
+}
+.navTabs{
+  width: 100%;
+}
+/* .navTabs h3 {
+  cursor: pointer;
+} */
+
+/* .navTabs h3:hover {
+  color: #00affa;
+} */
+
+.navMenu {
+  display: flex;
+  background-color: #efefef;
+  justify-content: space-around;
+  cursor: pointer;
+  padding: 16px 0px;
+  width:100%;
+}
+
+.navMenuLink {
+  display: flex;
+}
+
+.navLink {
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 300;
+  color: #2a28ad;
+  transition: 0.2s all;
+}
+
+.active {
+  text-decoration: overline;
+  color: #c24716;
+  font-weight: 500;
+  /* background-color: burlywood;
+  padding: 0px 8px;
+  border-radius: 10px; */
+}
+
+.navRouter {
+  display: flex;
+  flex-direction: column;
+}
+
+/* CARD ADD BUTTON */
+.addIcon {
+  margin-left: 8px;
+}
+
+.hidden {
+  visibility: hidden;
+}

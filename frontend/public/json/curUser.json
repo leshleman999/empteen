@@ -1,0 +1,22 @@
+{
+    "email":"harry@gmail.com",
+    "hashedPassword": "",
+    "firstname": "Harry",
+    "lastname": "Paul",
+    "active": true,
+    "displayname": "Harry",
+    "image": "https://tse1.mm.bing.net/th?id=OIP.v-nqadRQyGcaNGLj5J0bCwHaJ1&pid=Api&P=0&w=300&h=300",
+    "guardianname": "",
+    "guardianemail": "",
+    "city": "San Jose",
+    "state": "CA",
+    "country": "USA",
+    "teen": false,
+    "phonenumber": "503-222-2222",
+    "birthday": "",
+    "timezone": "Pacific Time Zone",
+    "aboutme": "I love the outdoors.",
+    "pronouns": "He, Him, Us",
+    "isAdmin": true,
+    "cpassword": ""
+}

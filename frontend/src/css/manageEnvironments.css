@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Cherry+Cream+Soda&display=swap');
+
+.manageEnvContent{
+  display:flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width:80vw;
+  /* background-color: red; */
+
+}
+
+.manageEnvContent >.header{
+  width:80vw;
+  display:flex;
+  /* justify-content: center; */
+}
+
+.addEnv{
+  margin-left: 20px;
+}
+
+
+.adminTitle{
+  font-size: .75em;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-family: 'Cherry Cream Soda', cursive;
+
+}
+
+.manageEnvContent > .envSearch{
+  display:flex;
+  flex-direction:column;
+  width:80vw;
+
+}
+
+.manageEnvContent > .envSearch > .envSearchList{
+  width:70vw;
+  margin:20px;
+  display:flex;
+  flex-flow:wrap row
+  
+}
+.manageEnvContent > .envSearch >  .envSearchList > .searchInput{
+  width: 500px;
+}
+
+/* .envSearchList{
+  display:flex;
+  flex-direction: row;
+  flex-wrap:wrap;
+
+} */
+
+.envSearchList > .envCard{
+  display:flex;
+  flex-direction:column;
+  text-align:center;
+  align-items:center;
+  width: 200px;
+  height: 225px;
+  margin: 20px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius:20px;
+  text-decoration: none;
+  color: black;
+
+}
+.envSearchList > .envCard > .envTitle{
+  width: 100%;
+  /* margin-top: 5px; */
+  font-size: 20px;
+  text-decoration:none;
+  font-family: 'Cherry Cream Soda', cursive;
+}
+.envSearchList > .envCard > p{
+  width: 90%;
+  text-decoration:none;
+  margin-top: 0px;
+}
+
+
+.searchIcon{
+  background-color: blue;
+  width: 20px;
+  height: 20px;
+}
+.envImage{
+  height:100px;
+  width: 100%;
+  border-radius: 10px;
+  /* margin-top: 10px; */
+
+}
+.envTeacher{
+  margin: 0px 0px 10px 0px;
+}
+
+p{
+  font-size: 10px;
+  letter-spacing: 1px;
+  padding-top:10px;
+
+}
+
+.envForm{
+  display:flex;
+  width:100vw;
+}
+
+#envImage{
+  width: 100px;
+  height: 100px;
+
+}
+.allMembers{
+  display:flex;
+  flex-direction: column;
+  width: 200px;
+  margin-left: 20px;
+}
+.envForm > .leftside{
+  width:60vw;
+ 
+}
+.envForm > .rightside{
+  width:25vw;
+}
+
+.status{
+  display:flex;
+  flex-direction: column;
+  width:60%;
+  
+}
+
+.statusControls{
+  margin: 10px;
+  display:flex;
+  justify-content:space-between;
+}
+
+.teacher{
+  display:flex;
+  flex-direction:column;
+}
+
+.teacherInfo{
+    margin: 10px;
+
+}
+#teacherImage{
+  width:100px;
+  height: 100px;
+}
+
+
+/* =============== sample ==================== */
+.form-inputs p {
+  color: red;
+}
+
+.timestamp{
+  margin-bottom:10px;
+}
+
+.adminTitle{
+  font-size:28px;
+  color:#594F4E
+
+}
+
+.envSearchLabel{
+  font-size: 14px;
+  color:#594F4E
+}
+
+.envLink{
+  text-decoration: none;
+  color:#594F4E;
+}
+
+.envLink:link{
+
+  color:#594F4E;
+}

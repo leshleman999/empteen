@@ -1,0 +1,95 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.display {
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+  width: 100%;
+  background-color: #efefef;
+  padding-top: 15px;
+}
+ 
+/* Wrapper for the announcements posts */
+.announcements {
+    display: flex;
+    /* height: 90%; */
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* The actual announcement itself */
+.post {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: #fefefe;
+  box-shadow: -3px 0px 8px grey;
+  /* padding-top: 10px; */
+  padding-left: 10px;
+  padding-right: 10px;
+  min-height: 175px;
+  border: 1px solid gray;
+  border-radius: 15px;
+  transition: 0.2s all;
+  overflow: hidden;
+  width: 90%;
+  margin-bottom: 20px;
+}
+.post:hover {
+  transform: translateY(-10px);
+  box-shadow: -6px 10px 6px rgba(0, 0, 0, 0.25);
+}
+
+/* Top Info Of the Post Section */
+.info {
+
+    display: flex;
+    align-items: center;
+    margin-top: 0px;
+    width:100%;
+}
+.info > .profile{
+  /* width:20%; */
+  position:relative;
+}
+
+.info > .profile img {
+    
+}
+
+.info > .title {
+  text-align: center;
+  width:100%;
+  color:#7b6d6d;
+  font-size: 16px;
+  font-family: 'Cherry Cream Soda', cursive;
+    /* justify-content: center; */
+    
+}
+
+.annContent{
+  margin: 10px 20px;
+  
+}
+
+.avatar{
+  position:absolute;
+  margin-top: 0px;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid black;  
+}
+/* Content middle that contains content */
+
+/* .content {
+background-color: blue;
+} */
