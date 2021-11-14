@@ -1,21 +1,17 @@
-import React, { useState,useContext } from 'react';
+import React, { useState} from 'react';
 import {SidebarData2} from './SidebarData2';
 import SidebarMenu from './SidebarMenu';
 import logo from '../assets/EmpowerteenLogo.jpg';
 import InsertEmoticonIcon from '@mui/icons-material/InsertEmoticon';
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
-import { EmpTeenContext } from '../App'
-import { EmpTeenUserEnvs } from '../App' 
-import { EmpTeenCurEnv } from '../App' 
-import { NavLink, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
+import { useStateValue } from '../utils/StateProvider';
 
 
 export default function Sidebar2() {
+    const [state,dispatch] = useStateValue()
     const history = useHistory();
 
-    const [user, setUser] = useContext(EmpTeenContext)
-    const [userEnvs, setUserEnvs] = useContext(EmpTeenUserEnvs)
-    const [curEnv, setCurEnv] = useContext(EmpTeenCurEnv)
     const [feelings, setFeelings] = useState("");
     
     const editfeelings =(e)=>{
@@ -27,7 +23,7 @@ export default function Sidebar2() {
     }
 
     const gotoHome = () =>{
-        history.push("/home");;
+        history.push("/home");
     }
 
     return (

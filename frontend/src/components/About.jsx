@@ -1,24 +1,25 @@
 import React from 'react'
 import '../css/about.css'
+import { useStateValue } from '../utils/StateProvider';
 
 function About() {
+    const [state,dispatch] = useStateValue()
     return (
         <div className="aboutContainer">
             <div className="card">
-                <h3>About This Environment</h3>
+                <h3>{state.curEnv.envName} Environment</h3>
                 <div>
                     <section className="aboutDescription">
                         <h4>Description</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod laudantium distinctio ipsam et quia natus nemo iste maxime id est exercitationem, voluptatem nisi veniam illum pariatur debitis quae, optio placeat?
-                        </p>
+                        <p>{state.curEnv.envDescription}</p>
                     </section>
                     <section className="teacher">
                         <h4>Teacher</h4>
-                        <p>Lance</p>
+                        <p>Teacher Name goes here</p>
                     </section>
                     <section className="aboutTeacher">
                         <h4>About Teacher</h4>
-                        <p>Lance is an amazing teacher with the patience, knowledge, and care to ensure you get the most out of this course.</p>
+                        <p>Teacher About me goes here.</p>
                     </section>
                 </div>        
             </div>

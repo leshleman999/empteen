@@ -1,25 +1,13 @@
-import React, {useState} from 'react';
-import { NavLink, useHistory } from 'react-router-dom';
+import React  from 'react';
+// import { NavLink, useHistory } from 'react-router-dom';
 import styled from "styled-components";
 import bgImg2 from '../assets/Loginpic.png'
 import Login_Sidebar from './Login_Sidebar';
 import Login_main from './Login_main';
 
-// import loginpic from "../images/login.svg";
-// import { CurrentUser } from './CurrentUser';
 
 export default function Login() {
-    // const history = useHistory();
-    // const [email, setEmail] = useState('');
-    // const [password, setPassword] = useState('');
     
-    // const [curUser,setCurUser] = useState([]);
-
-    // let user = useContext(CurrentUser)
-
-    
-    
-    console.log("hello4")
     return (
         <Container>
         <Wrapper>
@@ -48,5 +36,6 @@ const Wrapper = styled.div`
     height: 100%;
     display: flex;
 `;
+
 
 

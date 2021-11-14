@@ -1,26 +1,27 @@
-import React, {useState,useContext} from 'react'
-import contentTopics from '../css/contentTopics.css'
+import React, {useState} from 'react'
+// import contentTopics from '../css/contentTopics.css'
 import {Rating} from '@mui/material'
-import Link from '@mui/material/Link'
-import Breadcrumbs from '@mui/material/Breadcrumbs'
-import Typography from '@mui/material/Typography'
+// import Link from '@mui/material/Link'
+// import Breadcrumbs from '@mui/material/Breadcrumbs'
+// import Typography from '@mui/material/Typography'
 import CommentIcon from '@mui/icons-material/Comment';
-import { EmpTeenCurEnv } from '../App' 
+import { useStateValue } from '../utils/StateProvider';
 
 function ContentTopic(props) {
-    const [curEnv, setCurEnv] = useContext(EmpTeenCurEnv)
-
-    const {topic, handleTopicPopUp} = props;
+    const [state,dispatch] = useStateValue()
+    
+    // const {topic, handleTopicPopUp} = props;
     // const topic = props.envs(0);
     const [starValue, setStarValue] = useState(0);
-    console.log('topic', topic)
+    // console.log('topic', topic)
 
     
     return (
         <div className="topicContainer">
             <div className="contentTopics">
                 {/* TOP SECTION IMAGE */}
-                <img className="topicImage" src={topic.topImage} alt="" />
+                <img className="topicImage" src={state.topic.topImage} alt="" />
+                {/* <img className="topicImage" src={topic.topImage} alt="" /> */}
 
                 {/* MIDDLE SECTION CONTENT */}
                 <div className="contentSide">
@@ -29,9 +30,9 @@ function ContentTopic(props) {
                         <h5 className="topicPostDate">
                             Post Date: Sep 22, 2021
                         </h5>
-                            <h2 className="topicTitle" onClick={handleTopicPopUp}>
+                            {/* <h2 className="topicTitle" onClick={handleTopicPopUp}>
                                 {topic.topTitle}
-                            </h2>
+                            </h2> */}
                         {/* </Link>                    */}
                         
                     {/* </div>  */}
@@ -57,7 +58,7 @@ function ContentTopic(props) {
                             </h5>
                         </div>
                         <div className="topicComments">
-                            <CommentIcon className="commentIcon" fontSize="large" onClick={handleTopicPopUp}/>
+                            {/* <CommentIcon className="commentIcon" fontSize="large" onClick={handleTopicPopUp}/> */}
                             <h4>25</h4>
                         </div>
                     </section>

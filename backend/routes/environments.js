@@ -1,23 +1,48 @@
 const express = require('express');
 const router = express.Router();
 
-//require('../db/conn');
+require('../db/conn');
 
 const UserEnv = require("../models/userEnvs");
 const Env = require("../models/Environments");
 
+
+
 router.post('/getuserenvs', async (req, res) => {
-    console.log("getuserenvs",req.body)
-    const user = req.body;
-    try {
-        const userEnvs = await UserEnv.find({ email: user.email }).populate("envObjectId");
-        res.status(200).send(userEnvs);
+    const userEmail = req.body;
+    console.log("receiving user Email", userEmail.email)
+    let returnData = [];
+    
+    try
+    {
+        const userEnvironments = await UserEnv.find({ email: userEmail.email}).populate("envObjectId");
+        console.log("backend getuserenvs",userEnvironments)
+        userEnvironments.map((e)=>(
+            returnData.push(e.envObjectId)
+            ))
+        res.status(200).send(returnData);
     } 
     catch (err) {
         console.log("catch err",err);
     }
   }
   );
+
+
+
+
+//=================================================================================================================
+    // DB.db.findValueInArrayWithMultipleCriteriaDemo.find().pretty();
+// DB.getCollection('envs').aggregate([{
+//     $lookup:
+//     {
+//     From: “Grades”,
+//     localField: “_id”,
+//     foreignField: “_id”,
+//     as: “StudentMarks”
+//     }
+//     }])
+
 
   //===========================================================
   

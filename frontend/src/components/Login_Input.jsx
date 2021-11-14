@@ -1,9 +1,8 @@
-import React, {useContext} from 'react'
+import React  from 'react'
 import styled from "styled-components";
-import { EmpTeenContext } from '../App'
 
 const Login_Input = ({ type, placeholder }) => {
-    const [user, setUser] = useContext(EmpTeenContext)
+
     return (
         <Container>
             <StyledInput  

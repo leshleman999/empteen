@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import { NavLink, useHistory } from 'react-router-dom';
-// import signpic from "../images/signup.svg";
+// import { useStateValue } from '../utils/StateProvider';
+
 
 export default function Signup() {
     const history = useHistory();

@@ -1,21 +1,16 @@
-import React, { useState,useContext } from 'react';
+import React, { useState} from 'react';
 import {SidebarData} from './SidebarData';
-import {SidebarData2} from './SidebarData2';
 import SidebarMenu from './SidebarMenu';
 import logo from '../assets/EmpowerteenLogo.jpg';
 import InsertEmoticonIcon from '@mui/icons-material/InsertEmoticon';
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
-import { EmpTeenContext } from '../App'
-import { EmpTeenUserEnvs } from '../App' 
-import { EmpTeenCurEnv } from '../App' 
-import { NavLink, useHistory } from 'react-router-dom';
-import axios from 'axios'
+// import { useHistory } from 'react-router-dom';
+// import axios from 'axios'
+import { useStateValue } from '../utils/StateProvider';
 
 export default function Sidebar() {
-    const history = useHistory();
-    const [user, setUser] = useContext(EmpTeenContext)
-    const [userEnvs, setUserEnvs] = useContext(EmpTeenUserEnvs)
-    const [curEnv, setCurEnv] = useContext(EmpTeenCurEnv)
+    const [state,dispatch] = useStateValue()
+    // const history = useHistory();
     const [feelings, setFeelings] = useState("");
 
     const editfeelings =(e)=>{
@@ -27,26 +22,22 @@ export default function Sidebar() {
         setFeelings('');
     }
 
-    // user = {
-    //     email: '',
-    //     feelings: []
-    // };
-    const componentFeelings = () => {
-        this.getBlogfeelings();
-    }
+    // const componentFeelings = () => {
+    //     this.getBlogfeelings();
+    // }
 
-    const getBlogfeelings = () => {
-        axios.get('/api')
-        .then((response) => {
-            const data = response.data;
-            this.setState({feelings: data});
-            console.log('Data hasn been recieved!');
-        })
-        .catch(()=> {
-            console.log('Data has bee recieved!');
-            // alert('Error retrieving data!');
-        });
-    };
+    // const getBlogfeelings = () => {
+    //     axios.get('/api')
+    //     .then((response) => {
+    //         const data = response.data;
+    //         this.setState({feelings: data});
+    //         console.log('Data hasn been recieved!');
+    //     })
+    //     .catch(()=> {
+    //         console.log('Data has bee recieved!');
+    //         // alert('Error retrieving data!');
+    //     });
+    // };
     
     const gotoHome = () => {
         console.log("should go to home")
@@ -74,7 +65,7 @@ export default function Sidebar() {
 
                 {SidebarData.map((item, index)=>{
                     return <SidebarMenu item={item} key={index}/>
-                })}
+                })} 
             </div>
         </>
     );

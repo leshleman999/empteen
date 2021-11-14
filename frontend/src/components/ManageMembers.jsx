@@ -1,5 +1,4 @@
-import React, {useContext,useEffect, useState} from 'react'
-// import MockData from '../MOCK_DATA .json'
+import React, {useEffect, useState} from 'react'
 import Header from './Header'
 import Sidebar from './Sidebar'
 import Sidebar2 from './Sidebar2'
@@ -7,19 +6,19 @@ import WidgetSm from './WidgetSm'
 import WidgetSmTwo from './WidgetSmTwo'
 import WidgetSmThree from './WidgetSmThree'
 import axios from 'axios'
+import { useStateValue } from '../utils/StateProvider';
 
 function ManageMembers() {
+    const [state,dispatch] = useStateValue()
     const [searchTerm, setsearchTerm] =useState("");
-    const [members, setMembers] = useState([])
     
    
     useEffect(() => {
         
-            axios.post('http://localhost:5000/users')
+            axios.post('http://localhost:5000/getMembers')
                 .then(res => {
-                    console.log("members", members);
-                    setMembers(res.data) ;
-                    
+                    console.log("members", res.data);
+                    //dispatch here
                 })
                 .catch((err) => {
                     console.log("error", err)
@@ -66,7 +65,7 @@ function ManageMembers() {
                             </tr>
                         </thead>
                         <tbody>
-                            {members.filter((val) => {
+                            {state.allusers.filter((val) => {
                                 if(searchTerm === "") {
                                     return val;
                                 } else if(

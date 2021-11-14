@@ -1,0 +1,33 @@
+Firebase
+Free basic plan
+Easy setup
+Hosting
+Authentication
+$25/month - 
+what is realtime database
+Ask Tanner
+Ask Paula how much she can spend?
+Paula will provide dummy data
+Event link?
+
+Most people use Mongo
+Newer than Firebase
+people wanted to try something new
+high speed
+higher availability
+flexible
+easy 
+scalability
+adhoc query support
+documentation
+tech support
+transactions/joins
+limited data size
+lack of joins/data redundancy
+
+
+Consistency is important
+Get Paula something
+OK with Laurie driving it
+Reducer
+Firebase

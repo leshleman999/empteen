@@ -38,45 +38,35 @@ const topicSchema = new mongoose.Schema({
 
 // ENVIRONMENT SCHEMA
 const envSchema = new mongoose.Schema({
-  envName: {
+envName: {
     type: String,
     required: true,
   },
-  envDescription: {
+envDescription: {
     type: String,
     required: true,
   },
-  envImageURL: {
+envImageURL: {
     type: String,
     required: true,
   },
-  envActive: {
+ envActive: {
     type: Boolean,
     required: true,
   },
-  envDisplay: {
+ envDisplay: {
     type: Boolean,
     required: true,
   },
-  envCreateDate: {
+ envCreateDate: {
     type: Date,
     required: true,
   },
   envTeacher: {
-    imgURL: String,
-    displayName: String,
-    aboutMe: String,
-    pronouns: String,
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
+    required: true 
   },
-  envMembers: [
-    {
-      email: String,
-      imgURL: String,
-      displayName: String,
-      aboutMe: String,
-      pronouns: String,
-    },
-  ],
   envAnnouncements: [
     {
       annTitle: String,

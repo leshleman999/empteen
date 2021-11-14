@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const envSchema = new mongoose.Schema({
+const xenvSchema = new mongoose.Schema({
   envName: {
     type: String,
     required: true,
@@ -53,6 +53,6 @@ const envSchema = new mongoose.Schema({
   }],
 });
 
-const Env = mongoose.model("Env", envSchema);
+const xEnv = mongoose.model("xEnv", xenvSchema);
 
-module.exports = Env;
+module.exports = xEnv;

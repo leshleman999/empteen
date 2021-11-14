@@ -1,14 +1,19 @@
-import React, {useContext} from 'react'
+import React from 'react'
 import "../css/contentImage.css";
-import { EmpTeenCurEnv } from '../App' 
+import { useStateValue } from '../utils/StateProvider';
 
 function ContentImage() {
-    const [curEnv, setCurEnv] = useContext(EmpTeenCurEnv)
+    const [state,dispatch] = useStateValue()
+
+    console.log("contentimage curEnv",state)
+
     return (
             <div className="imageContainer">
-                <img src={curEnv.envImageURL} alt="" />
+                
+                <img className="envImage" src={state.curEnv.envImageURL} alt="" />
+                
                 <div className="imageOverlay">
-                    <h1>{curEnv.envName}</h1>
+                    <h1 className="envTitle">{state.curEnv.envName}</h1>
                 </div>
 
             </div>

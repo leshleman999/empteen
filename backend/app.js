@@ -23,6 +23,10 @@ app.use(express.json());
 // authentication route
 const authRoutes = require("./routes/auth");
 app.use("/", authRoutes);
+
+const envRoutes = require("./routes/environments");
+app.use("/env", envRoutes);
+
 //app.use(require("./routes/auth"));
 // topics route
 const topicsRoutes = require("./routes/topics");

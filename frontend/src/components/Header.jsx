@@ -1,14 +1,16 @@
-import React, { useState, useContext } from 'react';
+import React, { useState} from 'react';
 import '../css/Header.css';
 import ProfileDropDown from './ProfileDropDown';
 import ProfilePicture from './ProfilePicture';
-import { EmpTeenContext } from '../App'
+import { useStateValue } from '../utils/StateProvider';
+
 
 function Header() {
-    const [user, setUser] = useContext(EmpTeenContext)
+    const [state,dispatch] = useStateValue()
+
+    // console.log("user",state.user)
 
     const [dropDownOff, setDropDownOff] = useState(false);
-    
     const settingHandler = ()=>{
         setDropDownOff(true);
     }
@@ -22,11 +24,11 @@ function Header() {
         localStorage.clear();
     }
 
+    
     return (
         <div className='headerContainer'>
-           
             <div className='headerGreetings'>
-                <p className="userName">Welcome {user.displayname} </p>
+                <p className="userName">Welcome {state.user.displayname} </p>
                 <p className='logOutBtn' onClick={logOut}>Logout</p>
             </div>
            

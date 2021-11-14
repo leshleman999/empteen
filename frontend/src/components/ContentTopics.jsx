@@ -1,41 +1,47 @@
-import React, { useState, useEffect, useContext} from 'react'
+import React, {useEffect} from 'react'
 import '../css/contentTopics.css'
 import ContentTopic from './ContentTopic'
-import Button from '@material-ui/core/Button'
-import {BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
-import Card from '@mui/material/Card';
-import {Rating} from '@mui/material'
-import CommentIcon from '@mui/icons-material/Comment';
+// import Button from '@material-ui/core/Button'
+// import {BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
+// import Card from '@mui/material/Card';
+// import {Rating} from '@mui/material'
+// import CommentIcon from '@mui/icons-material/Comment';
 import axios from 'axios'
-import { EmpTeenCurEnv } from '../App' 
-
+import { useStateValue } from '../utils/StateProvider';
 
    
 
 function ContentTopics({handleTopicPopUp}) {
-    const [curEnv, setCurEnv] = useContext(EmpTeenCurEnv)
-    const [getAllTopics, setGetAllTopics] = useState([])
+    const [state,dispatch] = useStateValue()
+    //to see the state variables, go to /utils/reducer.js  ---example:  state.user.displayname
+    
+    // const [getAllTopics, setGetAllTopics] = useState([])
 
     useEffect(() => {
  // make a request for all topics with a given ID
-    const environments =
-    axios.get('/topics',curEnv).then((res)=>{
-        // success
-        console.log(res.data)
-        setGetAllTopics(res.data)
-        res.data.map(topic => {
-            console.log('topic',topic)
-            return (
-                <div>
-                    <ContentTopic topic={topic}/>
-                </div>
-            )
-        })
-              
-    }).catch((error)=>{
-        // handle error
-        console.log(error)
-    })
+    // const environments =
+    // axios.get('/topics',curEnv).then((res)=>{
+    //     // success
+    //     console.log("topics",res.data)
+    //     setGetAllTopics(res.data)
+
+    //     res.data.map(topic => {
+    //         console.log('topic',topic)
+    //         return (
+    //             <div>
+    //                 <ContentTopic topic={topic}/>
+    //             </div>
+    //         )
+    //     })
+        // dispatch({
+        //     type: 'LOGIN_SUCCESS', 
+        //     payload: result.data    //passing the user object
+        // });
+
+    // }).catch((error)=>{
+    //     // handle error
+    //     console.log(error)
+    // })
      
     }, [])
 
@@ -46,8 +52,8 @@ function ContentTopics({handleTopicPopUp}) {
     
      return (
         <div className="topicDisplay"> 
-            {getAllTopics.map((item)=>{
-                const topic = item; // topics
+            {state.envTopics.map((item)=>{
+                const topic = item; 
                 console.log('map topics', topic)
 
                 return (

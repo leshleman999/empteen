@@ -1,50 +1,61 @@
-import React, { useState,useContext } from 'react';
+import React, { useState,useEffect } from 'react';
 import '../App.css';
-import { EmpTeenContext } from '../App'
-import { EmpTeenUserEnvs } from '../App'
-import { EmpTeenCurEnv } from '../App' 
 import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
-
+import { useStateValue } from '../utils/StateProvider';
 
 export default function SidebarMenu({item}) {
-    const [user, setUser] = useContext(EmpTeenContext)
-    const [userEnvs, setUserEnvs] = useContext(EmpTeenUserEnvs)
-    const [curEnv, setCurEnv] = useContext(EmpTeenCurEnv)
+    const [state,dispatch] = useStateValue()
+    console.log("Sidebar2 3")
 
     const [subnav, setSubnav] = useState(false);
     const showSubnav = () => setSubnav(!subnav);
+    
+    useEffect(()=>{
+        // let general = state.userEnvs.filter((env) => env.envName === 'General')
+        // dispatch({type: 'SET_INITIAL_GENERAL_ENVIRONMENT',payload: state.userEnvs.filter((env) => env.envName === 'General')})
+        // console.log("")
+    },[])
 
+    const handleEnvChange = (env) => {
+        console.log("item clicked",env)
+        dispatch({type: 'SET_CURRENT_ENVIRONMENT', payload: env});
+    }
+
+    // console.log("filtered sb",state.userEnvs.filter(function(env) {return env.envName == 'General'}))
+// console.log("filtered",[{n:1},{n:2},{n:3}].filter(function(number) {return number.n == 1}))
+    // console.log("item.subNav",{item})
     return (
         <>       
             
-                <div className="SidebarList" onClick={item.subNav &&
-                showSubnav}>
+            <div className="SidebarList" onClick={item.subNav && showSubnav}>
                 <div>{item.icon}</div>
                 <div className="title">{item.title}</div> 
                 
-                
-                {item.subNav && subnav
+            
+                {
+                item.subNav && subnav
                 ? item.iconOpened 
                 : item.subNav 
                 ? item.iconClosed
                 :null} 
 
-                </div>   
-
-
-                    {subnav && userEnvs.map((item, index)=>{
-
-                    return( 
-                            <div onClick={(item)=>setCurEnv(item)} className="dropdownlist" key={index}>
-    
-                            <div id="icon"><PeopleAltIcon/></div> 
-                            <div id="title">{item.envName}</div> 
-                            
-                            </div> 
-                        )  
-                    })}   
+            </div>   
+                    
+            {subnav && state.userEnvs.map((env, index)=>{
+                console.log("mapped item",env)
+                return( 
+                    <div onClick={(env)=>handleEnvChange(env)} className="dropdownlist" key={index} >
+                    
+                        <div id="icon"><PeopleAltIcon/></div> 
+                        <div id="title">{env.envName}</div> 
+                    
+                    </div> 
+                )  
+            })}   
 
         
         </>
     )
 }
+//state.userEnvs[0].envObjectId.envName
+//Object.keys(item).map(i => {Object.keys(item[i].map(field => {item[field]}))}

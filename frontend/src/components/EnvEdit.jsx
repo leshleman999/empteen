@@ -4,6 +4,7 @@ import React,{useState} from 'react'
 // import ToggleButton from '../globalComponents/ToggleButton'
 import '../css/manageEnvironments.css'
 import AddCircleOutlineOutlinedIcon from '@mui/icons-material/AddCircleOutlineOutlined';
+// import { useStateValue } from '../utils/StateProvider';
 
 const EnvEdit = (props) => {
     // const {envName,envDescription} = EditForm(value)
@@ -21,7 +22,7 @@ const EnvEdit = (props) => {
         envMembers: props.location.aboutProps.envMembers
       });
 
-    const [editEnv, setEditEnv] = useState([]);
+    // const [editEnv, setEditEnv] = useState([]);
 
     const handleChange = e => {
         const { name,value} = e.target
@@ -30,7 +31,7 @@ const EnvEdit = (props) => {
 
         function handleSubmit(e) {
             e.preventDefault();
-            setEditEnv((preEnv) => [...preEnv, state]);
+            // setEditEnv((preEnv) => [...preEnv, state]);
           }
 
     return (

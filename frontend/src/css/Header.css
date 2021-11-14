@@ -21,7 +21,7 @@
 .headerGreetings{
     /* border: 1px solid greenyellow; */
     /* height: 12vh; */
-    width: 200px;
+    width: 100px;
     /* margin-right: 0px; */
     /* padding-right: 0px; */
     /* display: flex; */
@@ -29,7 +29,7 @@
     /* justify-content: space-between; */
     /* align-items: flex-end; */
     /* margin-top:18px; */
-    background-color:yellow;
+    /* background-color:yellow; */
 
     
 }

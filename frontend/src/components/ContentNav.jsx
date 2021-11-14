@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import "../css/contentNav.css";
 import ContentInfo from '../components/ContentInfo'
 import { BrowserRouter as Router, Route, Switch, NavLink } from 'react-router-dom';
@@ -42,7 +42,7 @@ function ContentNav(props) {
                             <ContentAnnouncements />
                         </Route>
                         <Route path='/topics'>
-                            <ContentInfo />
+                            <ContentTopics />
                         </Route>
                     </Switch>
                 </Router>

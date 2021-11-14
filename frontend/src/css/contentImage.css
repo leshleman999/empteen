@@ -1,16 +1,17 @@
 .imageContainer {
   margin: 0;
-  z-index: 1;
-  background-color: #efefef;
-  background-image: url("https://youramazingteen.com/wp-content/uploads/2018/11/teenager-skin-care.jpg");
   background-size: contain;
   background-repeat: no-repeat;
   background-position-x: center;
-  /* background-size: 100% auto; */
-  min-height: 200px;
+  max-height: 300px;
   width: 100%;
   position: relative;
   text-align: center;
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
+}
+.envImage {
+  height: 300px;
+  /* width: 100%; */
 
 }
 .imageOverlay {
@@ -19,29 +20,37 @@
   background: linear-gradient(
     to right,
     #594f4e 10% 35%,
-    rgba(0, 0, 0, 0.35) 50% 55%,
+    rgba(0, 0, 0, 0.1) 55% 55%,
     #594f4e 70% 90%
   );
-  /* opacity: 0.35; */
+  /* opacity: 1.2; */
   color: white;
-  z-index: 2;
+  z-index: 100;
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
+  height: 300px;
+  width: auto;
+  z-index:300;
 }
-.imageOverlay h1 {
+
+/* .imageContainer img{ */
+  /* height: 300px; */
+  /* width: auto; */
+  /* z-index: 99; */
+/* } */
+.envTitle {
+
+  text-align: center;
   align-self: center;
   font-family: 'Cherry Cream Soda', cursive;
   color: white;
   letter-spacing:7px;
   opacity: .75;
   margin-top: 0px;
-}
-.contentImage {
-  height: auto;
-  width: 100%;
+  z-index:201;
 }
 
 

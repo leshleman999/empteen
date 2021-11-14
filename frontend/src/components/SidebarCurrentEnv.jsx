@@ -1,16 +1,17 @@
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import '../App.css';
 import {Link} from 'react-router-dom';
-import { EmpTeenContext } from '../App';
-import { EmpTeenUserEnvs } from '../App';
-import { EmpTeenCurEnv } from '../App';
+import { useStateValue } from '../utils/StateProvider';
 
 export default function SidebarCurrentEnv({item}) {
-    const [user, setUser] = useContext(EmpTeenContext);
-    const [userEnvs, setUserEnvs] = useContext(EmpTeenUserEnvs);
+  const [state, dispatch] = useStateValue()    
+    
     const [subnav, setSubnav] = useState(false);
     const showSubnav = () => setSubnav(!subnav);
-    const [curEnv, setCurEnv] = useContext(EmpTeenCurEnv);
+
+    const dispatch_curEnv = () => {
+      //dispatch here
+    }
 
     return (
         <>       
@@ -39,12 +40,13 @@ export default function SidebarCurrentEnv({item}) {
                   )  
                 })} */}
         {/* filter({envActive: true}) */}
-                  {subnav && userEnvs.map((item, index)=>{
+                  {subnav && state.userEnvs.map((item, index)=>{
                   return( 
-                      <Link onClick= {setCurEnv(item.envObjectId)} className="dropdownlist" to={item.link} key={index}>
+                    // <Link onClick= {setCurEnv(item._id)} className="dropdownlist" to={item.link} key={index}></Link>
+                      <Link onClick= {dispatch_curEnv} className="dropdownlist" to={item.link} key={index}>
 
                         <div id="icon">{item.icon}</div> 
-                        <div id="title">{item.envObjectId.envName}</div> 
+                        <div id="title">{item.title}</div> 
                       
                        </Link> 
                   )  

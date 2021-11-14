@@ -1,12 +1,13 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import '../css/ProfilePicture.css';
-import { EmpTeenContext } from '../App'
+import { useStateValue } from '../utils/StateProvider';
 
 export default function ProfilePicture() {
-    const [user, setUser] = useContext(EmpTeenContext)
+    const [state,dispatch] = useStateValue()
+
     return (
         <div className='profilePicture'>
-            <img className="ppImage" src={user.image} alt='...' />
+            <img className="ppImage" src={state.user.image} alt='' />
         </div>
     )
 }

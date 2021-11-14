@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState} from 'react';
 import '../css/Settings.css';
 import ProfilePicture from './ProfilePicture';
 import Header from './Header';
@@ -7,37 +7,35 @@ import ClearSharpIcon from '@mui/icons-material/ClearSharp';
 import SaveSharpIcon from '@mui/icons-material/SaveSharp';
 import Sidebar from './Sidebar';
 import Confirmation from './Confirmation';
-import { EmpTeenContext } from '../App'
-
-
+import { useStateValue } from '../utils/StateProvider';  
 
 function Settings() {
-    const [user, setUser] = useContext(EmpTeenContext)
-    const [adminMember, setAdminMember] = useState(user.isAdmin);
-    
-    const [displayName, setDisplayName] = useState(user.displayname);
-    const [firstName, setFirstName] = useState(user.firstname);
-    const [lastName, setLastName] = useState(user.lastname);
-    const [email, setEmailName] = useState(user.email);
-    const [gardianName, setGardianName] = useState(user.guardianname);
-    const [gardianEmail, setGardianEmail] = useState(user.guardianemail);
-    const [locationCity, setLocationCity] = useState(user.city);
-    const [locationState, setLocationState] = useState(user.state);
-    const [locationCountry, setLocationCountry] = useState(user.country);
-    const [phoneNumber, setPhoneNumber] = useState(user.phonenumber);
-    const [birthday, setBirthDay] = useState(user.birthday);
-    const [timeZone, setTimeZone] = useState(user.timezone);
-    
-    const [currentPassword, setCurrentPasword] = useState(user.timezone);
-    const [newPassword, setNewPasword] = useState();
-    const [comfirmPassword, setComfirmPasword] = useState();
-    const [prounouns, setPronouns] = useState(user.pronouns);
-    const [aboutMe, setAboutMe] = useState(user.aboutme);
+    const [state,dispatch] = useStateValue()   
 
-    const isAdmin = (e)=>{
-        setAdminMember(e.target.value)
-        (user.isAdmin == 'true') ? console.log(`${user} is admin`) : console.log(`${user} is "NOT" admin`)       
-    }
+    // const [adminMember, setAdminMember] = useState(state.user.isAdmin);
+    const [displayName, setDisplayName] = useState(state.user.displayname);
+    const [firstName, setFirstName] = useState(state.user.firstname);
+    const [lastName, setLastName] = useState(state.user.lastname);
+    const [email, setEmailName] = useState(state.user.email);
+    const [gardianName, setGardianName] = useState(state.user.guardianname);
+    const [gardianEmail, setGardianEmail] = useState(state.user.guardianemail);
+    const [locationCity, setLocationCity] = useState(state.user.city);
+    const [locationState, setLocationState] = useState(state.user.state);
+    const [locationCountry, setLocationCountry] = useState(state.user.country);
+    const [phoneNumber, setPhoneNumber] = useState(state.user.phonenumber);
+    const [birthday, setBirthDay] = useState(state.user.birthday);
+    const [timeZone, setTimeZone] = useState(state.user.timezone);
+    
+    // const [currentPassword, setCurrentPasword] = useState();
+    // const [newPassword, setNewPasword] = useState();
+    // const [comfirmPassword, setComfirmPasword] = useState();
+    const [prounouns, setPronouns] = useState(state.user.pronouns);
+    const [aboutMe, setAboutMe] = useState(state.user.aboutme);
+
+    // const isAdmin = (e)=>{
+    //     setAdminMember(e.target.value)
+    //     (state.user.isAdmin == 'true') ? console.log(`${user} is admin`) : console.log(`${user} is "NOT" admin`)       
+    // }
     
 
     const inputDisplayHandler = (e)=>{
@@ -85,9 +83,9 @@ function Settings() {
         setAboutMe(e.target.value)
     }
 
-    const inputConfirmHandler = (e)=>{
-       setAdminMember(e.target.value)
-    }
+    // const inputConfirmHandler = (e)=>{
+    //    setAdminMember(e.target.value)
+    // }
 
     return (
     
@@ -163,7 +161,7 @@ function Settings() {
 
                                             <div className='confirmation' >
                                                
-                                                { adminMember ? <Confirmation /> : null }
+                                                { state.user.isAdmin ? <Confirmation /> : null }
                                                 
                                             </div>
 

@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const userEnvSchema = new mongoose.Schema({
+const xuserEnvSchema = new mongoose.Schema({
     email: {
         type: String,
         required: true,
@@ -12,5 +12,5 @@ const userEnvSchema = new mongoose.Schema({
     }
 })
 
-const UserEnvx = mongoose.model('UserEnvx',userEnvSchema);
+const UserEnvx = mongoose.model('UserEnvx',xuserEnvSchema);
 module.exports = UserEnvx

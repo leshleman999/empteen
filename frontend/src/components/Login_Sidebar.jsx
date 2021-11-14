@@ -1,79 +1,45 @@
-import React, {useState,useContext,useEffect} from 'react';
-import { NavLink, useHistory } from 'react-router-dom';
+import { NavLink, useHistory, Link } from 'react-router-dom';
 import styled from "styled-components";
 import logo from '../assets/logo1.png';
-import Input from './Login_Input';
-import { EmpTeenContext } from '../App';
+// import Input from './Login_Input';
 import axios from 'axios';
-
-
+import React, { useState, useEffect } from 'react';
+import { useStateValue } from '../utils/StateProvider';
 
 const Login_Sidebar = () => {
-    const [user, setUser] = useContext(EmpTeenContext)
+    
+    const [state,dispatch] = useStateValue()
+
     const history = useHistory();
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-
-
+    const [email, setEmail] = useState('harry@gmail.com');
+    const [password, setPassword] = useState('h');
 
     useEffect(()=>{
-        // setEmail(email);
-        // setPassword(password);
-        console.log("2",user)
+        console.log("running use Effect")
     },[])
+    
 
-    const loginUser = async (e) => {
-        console.log("3",user)
+    console.log("before axios state.user",state.user)
+
+    const loginUser = (e) => {
         e.preventDefault();
-        // console.log("email",email,"password",password)
-        
         axios.post('http://localhost:5000/signin',{email:email,password:password})
         .then((result) => {
-            // console.log("user",result.data)
-            setUser(result.data)
-            console.log("4",email,password)
-            console.log("4",user)
+            dispatch({
+                type: 'LOGIN_SUCCESS', 
+                payload: result.data    //passing the user object
+            });
 
-            
-        })
-        .catch((err) => {
-            console.error("4-error",err);
-            if(err.status === 400 || !err) {
-                window.alert("Issue getting user");
-            } 
-        })
-        // const res = await fetch('http://localhost:5000/signin', {
-        //     method:"POST",
-        //     headers: {
-        //         "Content-Type": "application/json"
-        //     },
-        //     body: JSON.stringify({
-        //         email,
-        //         password
-        //     })
-        // });
-
-        // console.log("hello2")
-        // const data = res.json();
-        // console.log("hello3")
-        // console.log("data",data.promiseResult)
-
-
-        // if(res.status === 400 || !user) {
-        if(!user && user.email != "xxx") {
-            // if(false || !user) {
-                window.alert("Invalid Credentials");
-
-        } else {
-            // console.log(user)
-            // console.log("email",email,"password",password)
-            window.alert("Login Successful")
-            console.log("5",user)
+            console.log("after axios state.user",state.user)
             history.push("/home");
-        }
+        })
+        .catch(err =>
+            console.log("error",err)
+            // dispatch({type: 'LOGIN_FAILURE', payload: result.data});
         
+        )
     }
-    console.log("1",user)
+    
     return (
         <Container>
             <LogoWrapper>
@@ -94,6 +60,7 @@ const Login_Sidebar = () => {
     );
 };
 
+export default Login_Sidebar;
 
 const Form = styled.form`
     width: 100%;
@@ -161,6 +128,5 @@ const Container = styled.div`
             cursor: pointer;
         }
     }
-`;
+`
 
-export default Login_Sidebar;

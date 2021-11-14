@@ -1,4 +1,5 @@
 import React from 'react'
+// import { useStateValue } from '../utils/StateProvider';
 
 export default function Contact() {
     return (

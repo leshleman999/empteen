@@ -1,11 +1,11 @@
-import React, {useContext} from 'react'
+import React from 'react'
 import '../css/topicComments.css'
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+// import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import CommentIcon from '@mui/icons-material/Comment';
-import { EmpTeenContext } from '../App'
+// import { useStateValue } from '../utils/StateProvider';
 
 function TopicComments() {
-    const [user, setUser] = useContext(EmpTeenContext)
+    // const [state,dispatch] = useStateValue()
 
     return (
         <div className="topicCommentContainer">

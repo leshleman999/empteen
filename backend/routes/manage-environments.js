@@ -45,17 +45,6 @@ router.post("/addEnv", async (req, res) => {
 
 const User = require("../models/Environments");
 
-router.post("/testConnection", async (req, res) => {
-  try{
 
-    const result = await User.find();
-    res.status(200).send(result);
-    
-
-  } 
-  catch (err) {
-    console.log(err);
-}
-});
 
 module.exports = router;

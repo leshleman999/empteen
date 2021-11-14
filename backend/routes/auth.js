@@ -18,15 +18,15 @@ router.post('/register', async (req, res) => {
 
     try{
 
-            const userExist = await User.findOne({ email: email });
+        const userExist = await User.findOne({ email: email });
             
-            if(userExist) {
+        if(userExist) {
                 return res.status(422).json({error:"Email already exists"});
 
-            } else if (password != cpassword) {
+        } else if (password != cpassword) {
                 return res.status(422).json({error:"Passwords do not match"});
 
-            } else {
+        } else {
 
                 const user = new User({  
                 email,
@@ -56,30 +56,30 @@ router.post('/register', async (req, res) => {
                 res.status(201).json({message: "User registered sucessfully!" });
             }
 
-            } catch (err) {
+        } catch (err) {
                 console.log(err);
-            }
+    }
         
 });
 
 
 
 router.post('/signin', async (req, res) => {
-   console.log("req.body")
+   console.log("req.body:",req.body)
     try {
         let token;
         const { email, password} = req.body;
-        console.log('backend email password',email,password)
+        // console.log('backend email password',email,password)
         if (!email || !password) {
             return res.status(400).json({error: "Plz Filled the data"})
         }
         console.log("backend email",email)
         const userLogin = await User.findOne({ email: email });
 
-        console.log("backend userLogin",userLogin);
+        // console.log("backend userLogin",userLogin);
 
 
-        if (userLogin) {
+        if (!userLogin) {
             // console.log("user login exists")
             // const isMatch = await bcrypt.compare(password, userLogin.hashedPassword);
 
@@ -91,7 +91,7 @@ router.post('/signin', async (req, res) => {
             //     httpOnly: true
             // });
 
-          if (false) {
+        //   if (false) {
               res.status(400).json({error: "Backend Invalid Credentials"});
           } else {
               res.status(200).send(userLogin)
@@ -99,7 +99,7 @@ router.post('/signin', async (req, res) => {
       
       
      
-        } 
+        // } 
     } 
     catch (err) {
         console.log("catch err",err);
@@ -126,5 +126,21 @@ router.get('/getUser', async (req, res) => {
 }
 
 );
+
+router.get('/getMembers', async (req, res) => {
+   
+    try {
+        
+        const users = await User.find();
+  
+        res.status(200).send(users)
+  
+    } 
+    catch (err) {
+        console.log("catch err",err);
+    }
+  }
+  
+  );
 
 module.exports = router;

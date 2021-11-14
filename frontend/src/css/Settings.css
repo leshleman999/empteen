@@ -52,7 +52,7 @@ span{
     display: flex;
 }
 
-.profile{
+.settings > .profile{
     /* border: 2px solid pink; */
     width: 10vw;
     display: flex;
