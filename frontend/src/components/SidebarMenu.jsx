@@ -13,11 +13,11 @@ export default function SidebarMenu({item}) {
     useEffect(()=>{
         // let general = state.userEnvs.filter((env) => env.envName === 'General')
         // dispatch({type: 'SET_INITIAL_GENERAL_ENVIRONMENT',payload: state.userEnvs.filter((env) => env.envName === 'General')})
-        // console.log("")
+        console.log("")
     },[])
 
     const handleEnvChange = (env) => {
-        console.log("item clicked",env)
+        console.log("subnav item clicked",env)
         dispatch({type: 'SET_CURRENT_ENVIRONMENT', payload: env});
     }
 
@@ -42,16 +42,29 @@ export default function SidebarMenu({item}) {
             </div>   
                     
             {subnav && state.userEnvs.map((env, index)=>{
-                console.log("mapped item",env)
-                return( 
-                    <div onClick={(env)=>handleEnvChange(env)} className="dropdownlist" key={index} >
-                    
-                        <div id="icon"><PeopleAltIcon/></div> 
-                        <div id="title">{env.envName}</div> 
-                    
-                    </div> 
-                )  
-            })}   
+                console.log("result", item.title,env.envActive)
+                if(item.title=="Current Environments" && env.envActive & env.envDisplay){
+                    return( 
+                        <div onClick={()=>handleEnvChange(env)} className="dropdownlist" key={index} >
+                        
+                            <div id="icon"><PeopleAltIcon/></div> 
+                            <div id="title">{env.envName}</div> 
+                        
+                        </div> 
+                    ) 
+                } else if (item.title=="Past Environments" && !env.envActive & env.envDisplay){
+                    return( 
+                        <div onClick={()=>handleEnvChange(env)} className="dropdownlist" key={index} >
+                        
+                            <div id="icon"><PeopleAltIcon/></div> 
+                            <div id="title">{env.envName}</div> 
+                        
+                        </div> 
+                    ) 
+                } else {
+                    return <div></div>
+                }
+            })}
 
         
         </>
