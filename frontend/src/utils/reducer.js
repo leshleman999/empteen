@@ -25,7 +25,7 @@ export const allenvs=[{}]
 //use axios in ManageMembers.jsx
 export const allusers=[{}]
 
-export const envTopics=[{topTitle: "Family Ties"},{topTitle: "TV Shows for Teenagers"},{topTitle: "Budding Politicians"}]
+export const envTopics=[{}]
 
 // Dispatched actions
 const reducer = (state,action) => {

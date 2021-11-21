@@ -1,11 +1,11 @@
 const express = require("express");
 const router = express.Router();
 
-// router.get("/topics", (req, res) => {
+// router.get("/", (req, res) => {
 //   res.send("get all topics");
 // });
 
-// router.post("/topics", (req, res) => {
+// router.post("/", (req, res) => {
 //   res.send("create a topic");
 // });
 
@@ -29,8 +29,7 @@ const {
   deleteTopic,
 } = require("../controllers/topics");
 
-router.route("/").get(getAllTopics);
-router.route("/").post(createTopic);
+router.route("/").get(getAllTopics).post(createTopic);
 router
   .route("/:topicID")
   .get(getSingleTopic)

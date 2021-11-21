@@ -2,39 +2,38 @@ const mongoose = require("mongoose");
 // const Schema = mongoose.Schema;
 
 // TOPIC SCHEMA
-const topicSchema = new mongoose.Schema({
-  envID: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "Env",
-    required: true,
-  },
-  topImage: {
-    type: String,
-    default: null,
-  },
-  topTitle: {
-    type: String,
-    required: true,
-  },
-  topContent: {
-    type: String,
-    required: true,
-  },
-  topDate: {
-    type: Date,
-  },
-  topAuthor: {
-    imgUrl: String,
-    displayName: String,
-    aboutMe: String,
-    pronouns: String,
-  },
-  topRating: {
-    type: Number,
-  },
-  postTime: String,
-  //   comments: [commentSchema],
-});
+// const topicSchema = new mongoose.Schema({
+//   envID: {
+//     type: String,
+//     required: true,
+//   },
+//   topImage: {
+//     type: String,
+//     default: null,
+//   },
+//   topTitle: {
+//     type: String,
+//     required: true,
+//   },
+//   topContent: {
+//     type: String,
+//     required: true,
+//   },
+//   topDate: {
+//     type: Date,
+//   },
+//   topAuthor: {
+//     imgUrl: String,
+//     displayName: String,
+//     aboutMe: String,
+//     pronouns: String,
+//   },
+//   topRating: {
+//     type: Number,
+//   },
+//   postTime: String,
+//   //   comments: [commentSchema],
+// });
 
 // ENVIRONMENT SCHEMA
 const envSchema = new mongoose.Schema({
@@ -80,9 +79,41 @@ envImageURL: {
       },
     },
   ],
+  envTopics: [{
+    envID: {
+      type: String,
+      required: true,
+    },
+    topImage: {
+      type: String,
+      default: null,
+    },
+    topTitle: {
+      type: String,
+      required: true,
+    },
+    topContent: {
+      type: String,
+      required: true,
+    },
+    topDate: {
+      type: Date,
+    },
+    topAuthor: {
+      imgUrl: String,
+      displayName: String,
+      aboutMe: String,
+      pronouns: String,
+    },
+    topRating: {
+      type: Number,
+    },
+    postTime: String,
+    //   comments: [commentSchema],
+  }]
 });
 
-const Topic = mongoose.model("Topic", topicSchema);
+// const Topic = mongoose.model("Topic", topicSchema);
 const Env = mongoose.model("Env", envSchema);
 
-module.exports = { Topic, Env };
+module.exports = Env;
