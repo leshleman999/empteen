@@ -16,11 +16,33 @@ function ContentTopics({handleTopicPopUp}) {
     //to see the state variables, go to /utils/reducer.js  ---example:  state.user.displayname
     
     // const [getAllTopics, setGetAllTopics] = useState([])
+    console.log(state.curEnv);
+    const {envTopics} = state.curEnv;
+    console.log(envTopics)
 
-    useEffect(() => {
- // make a request for all topics with a given ID
+    // useEffect(() => {
+//  make a request for all topics with a given ID
+    // axios.post('http://localhost:5000/topics',{envID: state.curEnv._id})
+    // .then((result) => {
+
+    //  dispatch({
+    //      type: 'GET_USER_ENVIRONMENTS', 
+    //      payload: result.data    //passing the user object
+    //  });
+    //  console.log("Home state.envTopics",result.data)
+
+    //  console.log("Home state.curEnv",state.curEnv._id)
+
+//  })
+//  .catch(err =>
+//      console.log("error",err)
+     // dispatch({type: 'LOGIN_FAILURE', payload: result.data});
+ 
+//  )})
+
+
     // const environments =
-    // axios.get('/topics',curEnv).then((res)=>{
+    // axios.get('/topics',state.curEnv).then((res)=>{
     //     // success
     //     console.log("topics",res.data)
     //     setGetAllTopics(res.data)
@@ -33,66 +55,38 @@ function ContentTopics({handleTopicPopUp}) {
     //             </div>
     //         )
     //     })
-        // dispatch({
-        //     type: 'LOGIN_SUCCESS', 
-        //     payload: result.data    //passing the user object
-        // });
+    //     dispatch({
+    //         type: 'LOGIN_SUCCESS', 
+    //         payload: result.data    //passing the user object
+    //     });
 
     // }).catch((error)=>{
     //     // handle error
     //     console.log(error)
     // })
      
-    }, [])
+    // }, [])
 
 // console.log('get all topics', getAllTopics)  
 
-    // console.log('env', environments)
+    console.log('hello');
 
     
      return (
         <div className="topicDisplay"> 
-            {state.envTopics.map((item)=>{
+            {envTopics.map((item)=>{
                 const topic = item; 
                 console.log('map topics', topic)
 
                 return (
-                    <div className="topicContainer">
-                        <ContentTopic topic={topic} key={topic._id} handleTopicPopUp={handleTopicPopUp}/> 
+                    <div className="topicContainer" key={topic._id} >
+                        <ContentTopic topic={topic} handleTopicPopUp={handleTopicPopUp}/> 
                     </div>
                 )
             })}
         </div>
         )
 }
-        
-                //         <ContentTopic topic={topic} key={topic.topic_id} handleTopicPopUp={handleTopicPopUp}/>
-                //         <div className="contentTopics">
-
-                //             <img className="topicImage" src={topic.topicImg} alt="" />
-
-                //             <div className="contentSide">
-
-                //                 <h1 className="topicTitle" onClick='{props.onClick}'>
-                //                 {topic.topTitle}
-                //                 </h1>
-                //                 <h5 className="topicPostDate">
-                //                     Post Date: {topic.topDate}
-                //                 </h5>
-                //             <section className="contentTopicsBottom">
-                //                 <div className="rating">
-                //                     <Rating  className="starRating" name="rating" />
-                //                     <h5 className="overallRating">
-                //                         Overall Rating {topic.topicRating}
-                //                     </h5>
-                //                 </div>
-                //                 <div className="topicComments">
-                //                     <CommentIcon className="commentIcon" fontSize="large" onClick="{props.onClick}"/>
-                //                     <h4>25</h4>
-                //                 </div>
-                //             </section>
-                //         </div>
-                // </div> 
                 
 
 export default ContentTopics

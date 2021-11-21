@@ -10,7 +10,7 @@ import { useStateValue } from '../utils/StateProvider';
 function ContentTopic(props) {
     const [state,dispatch] = useStateValue()
     
-    // const {topic, handleTopicPopUp} = props;
+    const {topic, handleTopicPopUp} = props;
     // const topic = props.envs(0);
     const [starValue, setStarValue] = useState(0);
     // console.log('topic', topic)
@@ -20,20 +20,17 @@ function ContentTopic(props) {
         <div className="topicContainer">
             <div className="contentTopics">
                 {/* TOP SECTION IMAGE */}
-                <img className="topicImage" src={state.topic.topImage} alt="" />
-                {/* <img className="topicImage" src={topic.topImage} alt="" /> */}
+                <img className="topicImage" src={topic.topImage} alt="" />
 
                 {/* MIDDLE SECTION CONTENT */}
                 <div className="contentSide">
                     {/* <div className="topicInfo"> */}
-                        {/* <Link href="./ContentTopic"> */}
-                        <h5 className="topicPostDate">
+                        <p className="topicPostDate">
                             Post Date: Sep 22, 2021
-                        </h5>
-                            {/* <h2 className="topicTitle" onClick={handleTopicPopUp}>
+                        </p>
+                            <h2 className="topicTitle" onClick={handleTopicPopUp}>
                                 {topic.topTitle}
-                            </h2> */}
-                        {/* </Link>                    */}
+                            </h2>
                         
                     {/* </div>  */}
 
@@ -64,10 +61,7 @@ function ContentTopic(props) {
                     </section>
                 </div>
             </div>
-        
-            {/* <img className="topicUserImage" src="https://images.unsplash.com/photo-1619895862022-09114b41f16f?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cHJvZmlsZSUyMHBpY3R1cmV8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="" /> */}
-
-                    {/* <Breadcrumbs aria-label="breadcrumbs">Breadcrumbs
+            {/* <Breadcrumbs aria-label="breadcrumbs">Breadcrumbs
                 <Link underline="hover" color="inherit" href="/">Skin Care for Girls</Link>
                 <Typography colot="text.primary">Skin Care Creams</Typography>
             </Breadcrumbs> */}
