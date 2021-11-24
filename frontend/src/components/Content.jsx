@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import '../css/content.css'
+import { BrowserRouter } from 'react-router-dom'
 import ContentImage from './ContentImage'
 import ContentNav from './ContentNav'
 import ContentInfo from '../components/ContentInfo'
@@ -10,6 +11,7 @@ import TopicCreate from './TopicCreate'
 // import Sidebar2 from './Sidebar2'
 // import Sidebar from './Sidebar'
 import { useStateValue } from '../utils/StateProvider';
+import ContentAnnouncement from './ContentAnnouncements'
 
 function Content() {
     const [state,dispatch] = useStateValue()
@@ -47,13 +49,17 @@ function Content() {
         // }
         
 
-
+        console.log('home', state.curEnv.envAnnouncements)
     return (
         
         <div className="contentContainer">
             <div className="contentBox">
                 <ContentImage />
                 <ContentNav onClick={handleTopicPopUp} handleOpenCreateTopic={handleOpenCreateTopic}/>
+
+                {/* Need for Announcements to show once Env is clicked on */}
+                {/* { name !== 'John Doe' ? <Redirect to="/" /> : null } */}
+                {/* {state.curEnv && <ContentAnnouncement />} */}
             </div>
             {/* <Backdrop />
             <TopicComments /> */}
