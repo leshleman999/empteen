@@ -1,6 +1,6 @@
 import React, { useEffect} from 'react'
 import Header from './Header'
-import Main from './Main'
+import Content from './Content'
 import Sidebar from './Sidebar'
 import Sidebar2 from './Sidebar2'
 import axios from 'axios'
@@ -75,7 +75,7 @@ export default function Home() {
 
                  {state.user.isAdmin ? <Sidebar2 /> : <Sidebar /> }
                
-                <Main />
+                <Content />
             </div>
         </div>
     )
