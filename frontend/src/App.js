@@ -13,6 +13,7 @@ import ManageMembers from "./components/ManageMembers";
 import Content from "./components/Content";
 import ContentImage from "./components/ContentImage";
 import Contact from "./components/Contact";
+// import ContentAnnouncements from './components/ContentAnnouncements';
 
 
 function App() {
@@ -31,9 +32,10 @@ function App() {
                 <Route exact path="/environments/add" component={EnvAdd} />
                 <Route exact path="/environments/edit" component={EnvEdit} />
                 <Route path="/members" component={ManageMembers} />
-                <Route exact path="/content" component={Content}/>
-                <Route path="/contentImage" component={ContentImage}/>
+                {/* <Route exact path="/content" component={Content}/> */}
+                {/* <Route path="/contentImage" component={ContentImage}/> */}
                 <Route path="/contact" component={Contact}/>
+                {/* <Route path='announcements' component={ContentAnnouncements} /> */}
               </Switch>
             </Router>
           </div>
